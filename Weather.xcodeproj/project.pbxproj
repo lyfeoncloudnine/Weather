@@ -24,6 +24,10 @@
 		B27747682A1DA9DC0086E0F4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B27747672A1DA9DC0086E0F4 /* Kingfisher */; };
 		B277476B2A1DA9FA0086E0F4 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = B277476A2A1DA9FA0086E0F4 /* Quick */; };
 		B277477F2A1DC03F0086E0F4 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277477E2A1DC03F0086E0F4 /* NetworkServiceType.swift */; };
+		B27747812A1DC0840086E0F4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27747802A1DC0840086E0F4 /* NetworkService.swift */; };
+		B27747842A1DC0EA0086E0F4 /* WeatherTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27747832A1DC0EA0086E0F4 /* WeatherTarget.swift */; };
+		B27747892A1DC14C0086E0F4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27747882A1DC14C0086E0F4 /* City.swift */; };
+		B277478B2A1DC3E00086E0F4 /* AvailableCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277478A2A1DC3E00086E0F4 /* AvailableCity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		B27747432A1DA5080086E0F4 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		B277474A2A1DA52D0086E0F4 /* Weather.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Weather.xctestplan; sourceTree = "<group>"; };
 		B277477E2A1DC03F0086E0F4 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
+		B27747802A1DC0840086E0F4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B27747832A1DC0EA0086E0F4 /* WeatherTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTarget.swift; sourceTree = "<group>"; };
+		B27747882A1DC14C0086E0F4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		B277478A2A1DC3E00086E0F4 /* AvailableCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				B277477D2A1DBFEF0086E0F4 /* NetworkService */,
+				B27747852A1DC1240086E0F4 /* Model */,
 				B277472D2A1DA4FC0086E0F4 /* ViewController.swift */,
 			);
 			path = Sources;
@@ -145,9 +154,28 @@
 		B277477D2A1DBFEF0086E0F4 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				B27747822A1DC0CE0086E0F4 /* Target */,
 				B277477E2A1DC03F0086E0F4 /* NetworkServiceType.swift */,
+				B27747802A1DC0840086E0F4 /* NetworkService.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		B27747822A1DC0CE0086E0F4 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				B27747832A1DC0EA0086E0F4 /* WeatherTarget.swift */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		B27747852A1DC1240086E0F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B277478A2A1DC3E00086E0F4 /* AvailableCity.swift */,
+				B27747882A1DC14C0086E0F4 /* City.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +303,10 @@
 			files = (
 				B277477F2A1DC03F0086E0F4 /* NetworkServiceType.swift in Sources */,
 				B277472E2A1DA4FC0086E0F4 /* ViewController.swift in Sources */,
+				B27747892A1DC14C0086E0F4 /* City.swift in Sources */,
+				B27747812A1DC0840086E0F4 /* NetworkService.swift in Sources */,
+				B277478B2A1DC3E00086E0F4 /* AvailableCity.swift in Sources */,
+				B27747842A1DC0EA0086E0F4 /* WeatherTarget.swift in Sources */,
 				B277472A2A1DA4FC0086E0F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

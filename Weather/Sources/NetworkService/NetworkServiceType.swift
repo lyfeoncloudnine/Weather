@@ -11,5 +11,5 @@ import Moya
 import RxSwift
 
 protocol NetworkServiceType {
-    func request(_ target: TargetType) -> Observable<Response>
+    func request(_ target: WeatherTarget) -> Observable<Response>
 }
