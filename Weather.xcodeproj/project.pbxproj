@@ -37,7 +37,7 @@
 		B27747372A1DA4FC0086E0F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B27747412A1DA5080086E0F4 /* WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27747432A1DA5080086E0F4 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
-		B277474A2A1DA52D0086E0F4 /* Weather.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = Weather.xctestplan; path = WeatherTests/Weather.xctestplan; sourceTree = "<group>"; };
+		B277474A2A1DA52D0086E0F4 /* Weather.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Weather.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,6 @@
 		B277471D2A1DA4FC0086E0F4 = {
 			isa = PBXGroup;
 			children = (
-				B277474A2A1DA52D0086E0F4 /* Weather.xctestplan */,
 				B27747282A1DA4FC0086E0F4 /* Weather */,
 				B27747422A1DA5080086E0F4 /* WeatherTests */,
 				B27747272A1DA4FC0086E0F4 /* Products */,
@@ -80,13 +79,9 @@
 		B27747282A1DA4FC0086E0F4 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				B27747292A1DA4FC0086E0F4 /* AppDelegate.swift */,
-				B277472B2A1DA4FC0086E0F4 /* SceneDelegate.swift */,
-				B277472D2A1DA4FC0086E0F4 /* ViewController.swift */,
-				B277472F2A1DA4FC0086E0F4 /* Main.storyboard */,
-				B27747322A1DA4FC0086E0F4 /* Assets.xcassets */,
-				B27747342A1DA4FC0086E0F4 /* LaunchScreen.storyboard */,
-				B27747372A1DA4FC0086E0F4 /* Info.plist */,
+				B277474D2A1DA6680086E0F4 /* App */,
+				B277474C2A1DA6620086E0F4 /* Sources */,
+				B277474B2A1DA65D0086E0F4 /* Resources */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -94,9 +89,38 @@
 		B27747422A1DA5080086E0F4 /* WeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				B277474A2A1DA52D0086E0F4 /* Weather.xctestplan */,
 				B27747432A1DA5080086E0F4 /* WeatherTests.swift */,
 			);
 			path = WeatherTests;
+			sourceTree = "<group>";
+		};
+		B277474B2A1DA65D0086E0F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B277472F2A1DA4FC0086E0F4 /* Main.storyboard */,
+				B27747322A1DA4FC0086E0F4 /* Assets.xcassets */,
+				B27747342A1DA4FC0086E0F4 /* LaunchScreen.storyboard */,
+				B27747372A1DA4FC0086E0F4 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B277474C2A1DA6620086E0F4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B277472D2A1DA4FC0086E0F4 /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B277474D2A1DA6680086E0F4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B27747292A1DA4FC0086E0F4 /* AppDelegate.swift */,
+				B277472B2A1DA4FC0086E0F4 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -393,7 +417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
