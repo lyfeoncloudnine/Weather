@@ -29,9 +29,9 @@ final class ListViewReactorTests: QuickSpec {
         
         context("로드하지 않았을 때") {
             it("각 날씨는 비어있다") {
-                XCTAssertNil(reactor.currentState.seoulWeathers)
-                XCTAssertNil(reactor.currentState.londonWeathers)
-                XCTAssertNil(reactor.currentState.chicagoWeathers)
+                XCTAssertTrue(reactor.currentState.seoulWeathers.isEmpty)
+                XCTAssertTrue(reactor.currentState.londonWeathers.isEmpty)
+                XCTAssertTrue(reactor.currentState.chicagoWeathers.isEmpty)
             }
             
             it("로딩중이 아니다") {
@@ -47,9 +47,9 @@ final class ListViewReactorTests: QuickSpec {
             context("성공하면") {
                 it("각 날씨는 비어있지 않다") {
                     reactor.action.onNext(.refresh)
-                    XCTAssertNotNil(reactor.currentState.seoulWeathers)
-                    XCTAssertNotNil(reactor.currentState.londonWeathers)
-                    XCTAssertNotNil(reactor.currentState.chicagoWeathers)
+                    XCTAssertFalse(reactor.currentState.seoulWeathers.isEmpty)
+                    XCTAssertFalse(reactor.currentState.londonWeathers.isEmpty)
+                    XCTAssertFalse(reactor.currentState.chicagoWeathers.isEmpty)
                 }
             }
             

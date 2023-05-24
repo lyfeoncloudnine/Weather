@@ -19,10 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func setRootViewController() {
-        let viewController = ViewController()
+        let viewController = ListViewController()
+        let networkService = NetworkService()
+        viewController.reactor = ListViewReactor(networkService: networkService)
+        let navigationController = UINavigationController(rootViewController: viewController)
         
         let initialWindow = UIWindow(frame: UIScreen.main.bounds)
-        initialWindow.rootViewController = viewController
+        initialWindow.rootViewController = navigationController
         initialWindow.makeKeyAndVisible()
         
         window = initialWindow
