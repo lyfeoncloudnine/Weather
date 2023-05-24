@@ -23,6 +23,7 @@
 		B27747652A1DA8950086E0F4 /* Hook in Frameworks */ = {isa = PBXBuildFile; productRef = B27747642A1DA8950086E0F4 /* Hook */; };
 		B27747682A1DA9DC0086E0F4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B27747672A1DA9DC0086E0F4 /* Kingfisher */; };
 		B277476B2A1DA9FA0086E0F4 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = B277476A2A1DA9FA0086E0F4 /* Quick */; };
+		B277477F2A1DC03F0086E0F4 /* NetworkServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277477E2A1DC03F0086E0F4 /* NetworkServiceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		B27747412A1DA5080086E0F4 /* WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27747432A1DA5080086E0F4 /* WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTests.swift; sourceTree = "<group>"; };
 		B277474A2A1DA52D0086E0F4 /* Weather.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Weather.xctestplan; sourceTree = "<group>"; };
+		B277477E2A1DC03F0086E0F4 /* NetworkServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		B277474C2A1DA6620086E0F4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B277477D2A1DBFEF0086E0F4 /* NetworkService */,
 				B277472D2A1DA4FC0086E0F4 /* ViewController.swift */,
 			);
 			path = Sources;
@@ -137,6 +140,14 @@
 				B27747292A1DA4FC0086E0F4 /* AppDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		B277477D2A1DBFEF0086E0F4 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				B277477E2A1DC03F0086E0F4 /* NetworkServiceType.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B277477F2A1DC03F0086E0F4 /* NetworkServiceType.swift in Sources */,
 				B277472E2A1DA4FC0086E0F4 /* ViewController.swift in Sources */,
 				B277472A2A1DA4FC0086E0F4 /* AppDelegate.swift in Sources */,
 			);
