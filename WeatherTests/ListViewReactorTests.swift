@@ -7,6 +7,8 @@
 
 import XCTest
 
+import RxSwift
+import RxTest
 import Quick
 @testable import Weather
 
@@ -20,11 +22,16 @@ final class ListViewReactorTests: QuickSpec {
             reactor = ListViewReactor(networkService: networkService)
         }
         
+        afterEach {
+            networkService = nil
+            reactor = nil
+        }
+        
         context("로드하지 않았을 때") {
             it("각 날씨는 비어있다") {
-                XCTAssertTrue(reactor.currentState.seoulWeathers.isEmpty)
-                XCTAssertTrue(reactor.currentState.londonWeathers.isEmpty)
-                XCTAssertTrue(reactor.currentState.chicagoWeathers.isEmpty)
+                XCTAssertNil(reactor.currentState.seoulWeathers)
+                XCTAssertNil(reactor.currentState.londonWeathers)
+                XCTAssertNil(reactor.currentState.chicagoWeathers)
             }
             
             it("로딩중이 아니다") {
@@ -38,14 +45,11 @@ final class ListViewReactorTests: QuickSpec {
         
         context("로드했을 떄") {
             context("성공하면") {
-                beforeEach {
-                    reactor.action.onNext(.refresh)
-                }
-                
                 it("각 날씨는 비어있지 않다") {
-                    XCTAssertFalse(reactor.currentState.seoulWeathers.isEmpty)
-                    XCTAssertFalse(reactor.currentState.londonWeathers.isEmpty)
-                    XCTAssertFalse(reactor.currentState.chicagoWeathers.isEmpty)
+                    reactor.action.onNext(.refresh)
+                    XCTAssertNotNil(reactor.currentState.seoulWeathers)
+                    XCTAssertNotNil(reactor.currentState.londonWeathers)
+                    XCTAssertNotNil(reactor.currentState.chicagoWeathers)
                 }
             }
             

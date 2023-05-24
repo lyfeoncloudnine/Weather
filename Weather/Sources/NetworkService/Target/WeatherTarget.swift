@@ -57,3 +57,19 @@ extension WeatherTarget {
         "0381e9354fe50a3a0a5fa63b9f067c8d"
     }
 }
+
+extension WeatherTarget {
+    var sampleData: Data {
+        switch self {
+        case .geocoding:
+            guard let path = Bundle.main.path(forResource: "GeocodingMock", ofType: "json") else { return Data() }
+            guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else { return Data() }
+            return data
+            
+        case .forecast:
+            guard let path = Bundle.main.path(forResource: "ForecastMock", ofType: "json") else { return Data() }
+            guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else { return Data() }
+            return data
+        }
+    }
+}

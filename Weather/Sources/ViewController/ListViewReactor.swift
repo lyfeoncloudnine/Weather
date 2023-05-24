@@ -15,17 +15,17 @@ final class ListViewReactor: Reactor {
     }
     
     enum Mutation {
-        case setSeoulWeathers
-        case setLondonWeathers
-        case setChicagoWeathers
+        case setSeoulWeathers(SectionOfWeather)
+        case setLondonWeathers(SectionOfWeather)
+        case setChicagoWeathers(SectionOfWeather)
         case setLoading(Bool)
         case setErrorMessage(String)
     }
     
     struct State {
-        var seoulWeathers = [Any]()
-        var londonWeathers = [Any]()
-        var chicagoWeathers = [Any]()
+        var seoulWeathers: SectionOfWeather?
+        var londonWeathers: SectionOfWeather?
+        var chicagoWeathers: SectionOfWeather?
         var isLoading = false
         @Pulse var errorMessage: String?
     }
@@ -41,7 +41,11 @@ final class ListViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .refresh:
-            return .merge(.just(.setSeoulWeathers), .just(.setLondonWeathers), .just(.setChicagoWeathers))
+            let loadingOn: Observable<Mutation> = .just(.setLoading(true))
+            let requests = Observable.merge(weathers(.seoul), weathers(.london), weathers(.chicago))
+            let loadingOff: Observable<Mutation> = .just(.setLoading(false))
+            
+            return .concat(loadingOn, requests, loadingOff)
         }
     }
     
@@ -49,14 +53,14 @@ final class ListViewReactor: Reactor {
         var newState = state
         
         switch mutation {
-        case .setSeoulWeathers:
-            newState.seoulWeathers = [1, 2, 3]
+        case .setSeoulWeathers(let weathers):
+            newState.seoulWeathers = weathers
             
-        case .setLondonWeathers:
-            newState.londonWeathers = [1, 2]
+        case .setLondonWeathers(let weathers):
+            newState.londonWeathers = weathers
             
-        case .setChicagoWeathers:
-            newState.chicagoWeathers = [1, 2]
+        case .setChicagoWeathers(let weathers):
+            newState.chicagoWeathers = weathers
             
         case .setLoading(let isLoading):
             newState.isLoading = isLoading
@@ -66,5 +70,40 @@ final class ListViewReactor: Reactor {
         }
         
         return newState
+    }
+}
+
+private extension ListViewReactor {
+    func weathers(_ availableCity: AvailableCity) -> Observable<Mutation> {
+        networkService.request(.geocoding(city: availableCity))
+            .map([City].self)
+            .flatMap { cities -> Observable<City> in
+                guard let city = cities.first else { return .empty() }
+                return .just(city)
+            }
+            .flatMap { [weak self] city -> Observable<Mutation> in
+                guard let self else { return .empty() }
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .secondsSince1970
+                return networkService.request(.forecast(city: city))
+                    .map([Weather].self, atKeyPath: "daily", using: decoder)
+                    .flatMap { weathers -> Observable<Mutation> in
+                        let items = Array(weathers.prefix(5))
+                        let section = SectionOfWeather(header: city.name, items: items)
+                        switch availableCity {
+                        case .seoul:
+                            return .just(.setSeoulWeathers(section))
+                            
+                        case .london:
+                            return .just(.setLondonWeathers(section))
+                            
+                        case .chicago:
+                            return .just(.setChicagoWeathers(section))
+                        }
+                    }
+            }
+            .catch {
+                return .just(.setErrorMessage($0.localizedDescription))
+            }
     }
 }

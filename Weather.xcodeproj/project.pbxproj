@@ -27,10 +27,16 @@
 		B27747922A1DC86A0086E0F4 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = B27747912A1DC86A0086E0F4 /* Quick */; };
 		B27747942A1DCC070086E0F4 /* NetworkServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27747932A1DCC070086E0F4 /* NetworkServiceStub.swift */; };
 		B27747972A1DD48B0086E0F4 /* ListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27747962A1DD48B0086E0F4 /* ListViewReactor.swift */; };
-		B277479A2A1DDB4A0086E0F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B27747992A1DDB4A0086E0F4 /* RxCocoa */; };
-		B277479C2A1DDB4A0086E0F4 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B277479B2A1DDB4A0086E0F4 /* RxRelay */; };
-		B277479E2A1DDB4A0086E0F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B277479D2A1DDB4A0086E0F4 /* RxSwift */; };
-		B27747A02A1DDB4A0086E0F4 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B277479F2A1DDB4A0086E0F4 /* RxTest */; };
+		B27747A22A1DDC1F0086E0F4 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27747A12A1DDC1F0086E0F4 /* Weather.swift */; };
+		B27747A92A1DE35D0086E0F4 /* ListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27747A82A1DE35D0086E0F4 /* ListDataSource.swift */; };
+		B27747BA2A1DE90A0086E0F4 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = B27747B92A1DE90A0086E0F4 /* RxBlocking */; };
+		B27747BC2A1DE90A0086E0F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B27747BB2A1DE90A0086E0F4 /* RxCocoa */; };
+		B27747BE2A1DE90A0086E0F4 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B27747BD2A1DE90A0086E0F4 /* RxRelay */; };
+		B27747C02A1DE90A0086E0F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B27747BF2A1DE90A0086E0F4 /* RxSwift */; };
+		B27747C22A1DE90A0086E0F4 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B27747C12A1DE90A0086E0F4 /* RxTest */; };
+		B27747C42A1DE9340086E0F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B27747C32A1DE9340086E0F4 /* RxCocoa */; };
+		B27747C72A1DEABD0086E0F4 /* ForecastMock.json in Resources */ = {isa = PBXBuildFile; fileRef = B27747C62A1DEABD0086E0F4 /* ForecastMock.json */; };
+		B27747C82A1DEAC40086E0F4 /* GeocodingMock.json in Resources */ = {isa = PBXBuildFile; fileRef = B27747C52A1DEA9E0086E0F4 /* GeocodingMock.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,10 @@
 		B277478E2A1DC7F20086E0F4 /* ListViewReactorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewReactorTests.swift; sourceTree = "<group>"; };
 		B27747932A1DCC070086E0F4 /* NetworkServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceStub.swift; sourceTree = "<group>"; };
 		B27747962A1DD48B0086E0F4 /* ListViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewReactor.swift; sourceTree = "<group>"; };
+		B27747A12A1DDC1F0086E0F4 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		B27747A82A1DE35D0086E0F4 /* ListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataSource.swift; sourceTree = "<group>"; };
+		B27747C52A1DEA9E0086E0F4 /* GeocodingMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GeocodingMock.json; sourceTree = "<group>"; };
+		B27747C62A1DEABD0086E0F4 /* ForecastMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ForecastMock.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,15 +77,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B277479C2A1DDB4A0086E0F4 /* RxRelay in Frameworks */,
+				B27747BE2A1DE90A0086E0F4 /* RxRelay in Frameworks */,
 				B27747652A1DA8950086E0F4 /* Hook in Frameworks */,
-				B277479E2A1DDB4A0086E0F4 /* RxSwift in Frameworks */,
+				B27747C02A1DE90A0086E0F4 /* RxSwift in Frameworks */,
 				B277475A2A1DA84E0086E0F4 /* Differentiator in Frameworks */,
 				B27747682A1DA9DC0086E0F4 /* Kingfisher in Frameworks */,
 				B27747622A1DA8830086E0F4 /* Then in Frameworks */,
 				B277475C2A1DA84E0086E0F4 /* RxDataSources in Frameworks */,
 				B277475F2A1DA8720086E0F4 /* RxMoya in Frameworks */,
-				B277479A2A1DDB4A0086E0F4 /* RxCocoa in Frameworks */,
+				B27747BC2A1DE90A0086E0F4 /* RxCocoa in Frameworks */,
 				B27747502A1DA8140086E0F4 /* ReactorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,8 +94,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B27747A02A1DDB4A0086E0F4 /* RxTest in Frameworks */,
 				B27747922A1DC86A0086E0F4 /* Quick in Frameworks */,
+				B27747C22A1DE90A0086E0F4 /* RxTest in Frameworks */,
+				B27747C42A1DE9340086E0F4 /* RxCocoa in Frameworks */,
+				B27747BA2A1DE90A0086E0F4 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +110,7 @@
 				B27747282A1DA4FC0086E0F4 /* Weather */,
 				B27747422A1DA5080086E0F4 /* WeatherTests */,
 				B27747272A1DA4FC0086E0F4 /* Products */,
+				B27747B52A1DE7B90086E0F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +146,7 @@
 		B277474B2A1DA65D0086E0F4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B27747A32A1DDF270086E0F4 /* MockData */,
 				B27747322A1DA4FC0086E0F4 /* Assets.xcassets */,
 				B27747342A1DA4FC0086E0F4 /* LaunchScreen.storyboard */,
 				B27747372A1DA4FC0086E0F4 /* Info.plist */,
@@ -181,6 +195,7 @@
 			children = (
 				B277478A2A1DC3E00086E0F4 /* AvailableCity.swift */,
 				B27747882A1DC14C0086E0F4 /* City.swift */,
+				B27747A12A1DDC1F0086E0F4 /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,8 +205,25 @@
 			children = (
 				B277472D2A1DA4FC0086E0F4 /* ViewController.swift */,
 				B27747962A1DD48B0086E0F4 /* ListViewReactor.swift */,
+				B27747A82A1DE35D0086E0F4 /* ListDataSource.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B27747A32A1DDF270086E0F4 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				B27747C52A1DEA9E0086E0F4 /* GeocodingMock.json */,
+				B27747C62A1DEABD0086E0F4 /* ForecastMock.json */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		B27747B52A1DE7B90086E0F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,9 +250,9 @@
 				B27747612A1DA8830086E0F4 /* Then */,
 				B27747642A1DA8950086E0F4 /* Hook */,
 				B27747672A1DA9DC0086E0F4 /* Kingfisher */,
-				B27747992A1DDB4A0086E0F4 /* RxCocoa */,
-				B277479B2A1DDB4A0086E0F4 /* RxRelay */,
-				B277479D2A1DDB4A0086E0F4 /* RxSwift */,
+				B27747BB2A1DE90A0086E0F4 /* RxCocoa */,
+				B27747BD2A1DE90A0086E0F4 /* RxRelay */,
+				B27747BF2A1DE90A0086E0F4 /* RxSwift */,
 			);
 			productName = Weather;
 			productReference = B27747262A1DA4FC0086E0F4 /* Weather.app */;
@@ -242,7 +274,9 @@
 			name = WeatherTests;
 			packageProductDependencies = (
 				B27747912A1DC86A0086E0F4 /* Quick */,
-				B277479F2A1DDB4A0086E0F4 /* RxTest */,
+				B27747B92A1DE90A0086E0F4 /* RxBlocking */,
+				B27747C12A1DE90A0086E0F4 /* RxTest */,
+				B27747C32A1DE9340086E0F4 /* RxCocoa */,
 			);
 			productName = WeatherTests;
 			productReference = B27747412A1DA5080086E0F4 /* WeatherTests.xctest */;
@@ -284,7 +318,7 @@
 				B27747632A1DA8950086E0F4 /* XCRemoteSwiftPackageReference "Hook" */,
 				B27747662A1DA9DC0086E0F4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B27747902A1DC86A0086E0F4 /* XCRemoteSwiftPackageReference "Quick" */,
-				B27747982A1DDB4A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B27747B82A1DE90A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B27747272A1DA4FC0086E0F4 /* Products */;
 			projectDirPath = "";
@@ -302,6 +336,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27747362A1DA4FC0086E0F4 /* LaunchScreen.storyboard in Resources */,
+				B27747C82A1DEAC40086E0F4 /* GeocodingMock.json in Resources */,
+				B27747C72A1DEABD0086E0F4 /* ForecastMock.json in Resources */,
 				B27747332A1DA4FC0086E0F4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,9 +360,11 @@
 				B277472E2A1DA4FC0086E0F4 /* ViewController.swift in Sources */,
 				B27747892A1DC14C0086E0F4 /* City.swift in Sources */,
 				B27747812A1DC0840086E0F4 /* NetworkService.swift in Sources */,
+				B27747A22A1DDC1F0086E0F4 /* Weather.swift in Sources */,
 				B277478B2A1DC3E00086E0F4 /* AvailableCity.swift in Sources */,
 				B27747842A1DC0EA0086E0F4 /* WeatherTarget.swift in Sources */,
 				B277472A2A1DA4FC0086E0F4 /* AppDelegate.swift in Sources */,
+				B27747A92A1DE35D0086E0F4 /* ListDataSource.swift in Sources */,
 				B27747972A1DD48B0086E0F4 /* ListViewReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +691,7 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		B27747982A1DDB4A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		B27747B82A1DE90A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
@@ -704,25 +742,35 @@
 			package = B27747902A1DC86A0086E0F4 /* XCRemoteSwiftPackageReference "Quick" */;
 			productName = Quick;
 		};
-		B27747992A1DDB4A0086E0F4 /* RxCocoa */ = {
+		B27747B92A1DE90A0086E0F4 /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B27747982A1DDB4A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = B27747B82A1DE90A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		B27747BB2A1DE90A0086E0F4 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747B82A1DE90A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		B277479B2A1DDB4A0086E0F4 /* RxRelay */ = {
+		B27747BD2A1DE90A0086E0F4 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B27747982A1DDB4A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = B27747B82A1DE90A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
-		B277479D2A1DDB4A0086E0F4 /* RxSwift */ = {
+		B27747BF2A1DE90A0086E0F4 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B27747982A1DDB4A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = B27747B82A1DE90A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		B277479F2A1DDB4A0086E0F4 /* RxTest */ = {
+		B27747C12A1DE90A0086E0F4 /* RxTest */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B27747982A1DDB4A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = B27747B82A1DE90A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
+		};
+		B27747C32A1DE9340086E0F4 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747B82A1DE90A0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
