@@ -9,7 +9,7 @@ import UIKit
 
 import Hook
 import Then
-
+import Kingfisher
 final class WeatherTableViewCell: BaseTableViewCell {
     private let dateLabel = UILabel().then {
         $0.font = .preferredFont(forTextStyle: .subheadline)
@@ -62,9 +62,15 @@ final class WeatherTableViewCell: BaseTableViewCell {
 extension WeatherTableViewCell {
     func configure(with weather: Weather) {
         dateLabel.text = weather.date.formatted(date: .long, time: .omitted)
-        iconImageView.setImage(from: "https://openweathermap.org/img/wn/\(weather.icon)@2x.png")
+        iconImageView.setImage(from: iconURLString(weather.icon))
         descriptionLabel.text = weather.description
         minTempLabel.text = "Min: \(weather.minTemp)°C"
         maxTempLabel.text = "Max: \(weather.maxTemp)°C"
+    }
+}
+
+extension WeatherTableViewCell {
+    func iconURLString(_ icon: String) -> String {
+        "https://openweathermap.org/img/wn/\(icon)@2x.png"
     }
 }

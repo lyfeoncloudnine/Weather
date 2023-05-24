@@ -8,7 +8,6 @@
 import UIKit
 
 import ReactorKit
-import RxDataSources
 import RxSwift
 
 final class ListViewController: UIViewController, View {
@@ -41,7 +40,7 @@ final class ListViewController: UIViewController, View {
                 array.flatMap { $0 }
             }
             .asDriver(onErrorJustReturn: [])
-            .drive(mainView.tableView.rx.items(dataSource: dataSources()))
+            .drive(mainView.tableView.rx.items(dataSource: mainView.dataSources()))
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.isLoading }
@@ -72,21 +71,6 @@ final class ListViewController: UIViewController, View {
                 weakSelf.presentAlert(message: errorMessage)
             })
             .disposed(by: disposeBag)
-    }
-}
-
-private extension ListViewController {
-    func dataSources() -> RxTableViewSectionedAnimatedDataSource<SectionOfWeather> {
-        RxTableViewSectionedAnimatedDataSource(
-            animationConfiguration: .init(insertAnimation: .fade, reloadAnimation: .fade, deleteAnimation: .fade),
-            configureCell: { _, tableView, indexPath, weather in
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.reuseIdentifier, for: indexPath) as? WeatherTableViewCell else { return UITableViewCell() }
-                cell.configure(with: weather)
-                return cell
-            },
-            titleForHeaderInSection: { dataSource, section in
-                dataSource[section].header
-            })
     }
 }
 

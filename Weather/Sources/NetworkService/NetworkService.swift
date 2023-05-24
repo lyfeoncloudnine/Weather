@@ -16,5 +16,6 @@ final class NetworkService: NetworkServiceType {
     
     func request(_ target: WeatherTarget) -> RxSwift.Observable<Response> {
         provider.rx.request(target).asObservable()
+            .timeout(.seconds(10), scheduler: MainScheduler.instance)
     }
 }
