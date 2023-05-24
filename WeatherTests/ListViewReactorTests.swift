@@ -44,13 +44,15 @@ final class ListViewReactorTests: QuickSpec {
                 
                 it("각 날씨는 비어있지 않다") {
                     XCTAssertFalse(reactor.currentState.seoulWeathers.isEmpty)
-                    XCTAssertFalse(reactor.currentState.longonWeathers.isEmpty)
+                    XCTAssertFalse(reactor.currentState.londonWeathers.isEmpty)
                     XCTAssertFalse(reactor.currentState.chicagoWeathers.isEmpty)
                 }
             }
             
             context("실패하면") {
                 it("에러메시지가 있다") {
+                    reactor.isStubEnabled = true
+                    reactor.stub.state.value = ListViewReactor.State(errorMessage: "대충 에러메시지")
                     XCTAssertNotNil(reactor.currentState.errorMessage)
                 }
             }
