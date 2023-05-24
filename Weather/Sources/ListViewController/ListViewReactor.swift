@@ -76,35 +76,45 @@ final class ListViewReactor: Reactor {
 
 private extension ListViewReactor {
     func weathers(_ availableCity: AvailableCity) -> Observable<Mutation> {
-        networkService.request(.geocoding(city: availableCity))
+        geocodeCity(city: availableCity)
+            .flatMap { [weak self] city -> Observable<Mutation> in
+                guard let self else { return .empty() }
+                return fetchWeather(city: city, for: availableCity)
+            }
+    }
+    
+    func geocodeCity(city: AvailableCity) -> Observable<City> {
+        networkService.request(.geocoding(city: city))
             .map([City].self)
             .flatMap { cities -> Observable<City> in
                 guard let city = cities.first else { return .empty() }
                 return .just(city)
             }
-            .flatMap { [weak self] city -> Observable<Mutation> in
-                guard let self else { return .empty() }
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .secondsSince1970
-                return networkService.request(.forecast(city: city))
-                    .map([Weather].self, atKeyPath: "daily", using: decoder)
-                    .flatMap { weathers -> Observable<Mutation> in
-                        let items = Array(weathers.prefix(5))
-                        let section = SectionOfWeather(header: city.name, items: items)
-                        switch availableCity {
-                        case .seoul:
-                            return .just(.setSeoulWeathers(section))
-                            
-                        case .london:
-                            return .just(.setLondonWeathers(section))
-                            
-                        case .chicago:
-                            return .just(.setChicagoWeathers(section))
-                        }
-                    }
+    }
+    
+    func fetchWeather(city: City, for availableCity: AvailableCity) -> Observable<Mutation> {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        
+        return networkService.request(.forecast(city: city))
+            .map([Weather].self, atKeyPath: "daily", using: decoder)
+            .map { Array($0.prefix(5)) }
+            .map { weathers -> SectionOfWeather in
+                let header = city.name
+                let section = SectionOfWeather(header: header, items: weathers)
+                return section
             }
-            .catch {
-                return .just(.setErrorMessage($0.localizedDescription))
+            .map { section -> Mutation in
+                switch availableCity {
+                case .seoul:
+                    return .setSeoulWeathers(section)
+                    
+                case .london:
+                    return .setLondonWeathers(section)
+                    
+                case .chicago:
+                    return .setChicagoWeathers(section)
+                }
             }
     }
 }
