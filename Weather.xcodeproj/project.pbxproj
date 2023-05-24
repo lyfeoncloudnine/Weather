@@ -12,6 +12,17 @@
 		B27747332A1DA4FC0086E0F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27747322A1DA4FC0086E0F4 /* Assets.xcassets */; };
 		B27747362A1DA4FC0086E0F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27747342A1DA4FC0086E0F4 /* LaunchScreen.storyboard */; };
 		B27747442A1DA5080086E0F4 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27747432A1DA5080086E0F4 /* WeatherTests.swift */; };
+		B27747502A1DA8140086E0F4 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = B277474F2A1DA8140086E0F4 /* ReactorKit */; };
+		B27747532A1DA82E0086E0F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B27747522A1DA82E0086E0F4 /* RxCocoa */; };
+		B27747552A1DA82E0086E0F4 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B27747542A1DA82E0086E0F4 /* RxRelay */; };
+		B27747572A1DA82E0086E0F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B27747562A1DA82E0086E0F4 /* RxSwift */; };
+		B277475A2A1DA84E0086E0F4 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = B27747592A1DA84E0086E0F4 /* Differentiator */; };
+		B277475C2A1DA84E0086E0F4 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = B277475B2A1DA84E0086E0F4 /* RxDataSources */; };
+		B277475F2A1DA8720086E0F4 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B277475E2A1DA8720086E0F4 /* RxMoya */; };
+		B27747622A1DA8830086E0F4 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B27747612A1DA8830086E0F4 /* Then */; };
+		B27747652A1DA8950086E0F4 /* Hook in Frameworks */ = {isa = PBXBuildFile; productRef = B27747642A1DA8950086E0F4 /* Hook */; };
+		B27747682A1DA9DC0086E0F4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B27747672A1DA9DC0086E0F4 /* Kingfisher */; };
+		B277476B2A1DA9FA0086E0F4 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = B277476A2A1DA9FA0086E0F4 /* Quick */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +52,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B277476B2A1DA9FA0086E0F4 /* Quick in Frameworks */,
+				B27747552A1DA82E0086E0F4 /* RxRelay in Frameworks */,
+				B27747652A1DA8950086E0F4 /* Hook in Frameworks */,
+				B277475A2A1DA84E0086E0F4 /* Differentiator in Frameworks */,
+				B27747532A1DA82E0086E0F4 /* RxCocoa in Frameworks */,
+				B27747682A1DA9DC0086E0F4 /* Kingfisher in Frameworks */,
+				B27747622A1DA8830086E0F4 /* Then in Frameworks */,
+				B277475C2A1DA84E0086E0F4 /* RxDataSources in Frameworks */,
+				B277475F2A1DA8720086E0F4 /* RxMoya in Frameworks */,
+				B27747572A1DA82E0086E0F4 /* RxSwift in Frameworks */,
+				B27747502A1DA8140086E0F4 /* ReactorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +155,19 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				B277474F2A1DA8140086E0F4 /* ReactorKit */,
+				B27747522A1DA82E0086E0F4 /* RxCocoa */,
+				B27747542A1DA82E0086E0F4 /* RxRelay */,
+				B27747562A1DA82E0086E0F4 /* RxSwift */,
+				B27747592A1DA84E0086E0F4 /* Differentiator */,
+				B277475B2A1DA84E0086E0F4 /* RxDataSources */,
+				B277475E2A1DA8720086E0F4 /* RxMoya */,
+				B27747612A1DA8830086E0F4 /* Then */,
+				B27747642A1DA8950086E0F4 /* Hook */,
+				B27747672A1DA9DC0086E0F4 /* Kingfisher */,
+				B277476A2A1DA9FA0086E0F4 /* Quick */,
+			);
 			productName = Weather;
 			productReference = B27747262A1DA4FC0086E0F4 /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +218,16 @@
 				Base,
 			);
 			mainGroup = B277471D2A1DA4FC0086E0F4;
+			packageReferences = (
+				B277474E2A1DA8140086E0F4 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				B27747512A1DA82E0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B27747582A1DA84E0086E0F4 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				B277475D2A1DA8710086E0F4 /* XCRemoteSwiftPackageReference "Moya" */,
+				B27747602A1DA8830086E0F4 /* XCRemoteSwiftPackageReference "Then" */,
+				B27747632A1DA8950086E0F4 /* XCRemoteSwiftPackageReference "Hook" */,
+				B27747662A1DA9DC0086E0F4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B27747692A1DA9FA0086E0F4 /* XCRemoteSwiftPackageReference "Quick" */,
+			);
 			productRefGroup = B27747272A1DA4FC0086E0F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -373,6 +418,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -399,6 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -483,6 +530,131 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B277474E2A1DA8140086E0F4 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		B27747512A1DA82E0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		B27747582A1DA84E0086E0F4 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		B277475D2A1DA8710086E0F4 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		B27747602A1DA8830086E0F4 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		B27747632A1DA8950086E0F4 /* XCRemoteSwiftPackageReference "Hook" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lyfeoncloudnine/Hook";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		B27747662A1DA9DC0086E0F4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		B27747692A1DA9FA0086E0F4 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B277474F2A1DA8140086E0F4 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B277474E2A1DA8140086E0F4 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
+		B27747522A1DA82E0086E0F4 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747512A1DA82E0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B27747542A1DA82E0086E0F4 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747512A1DA82E0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B27747562A1DA82E0086E0F4 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747512A1DA82E0086E0F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B27747592A1DA84E0086E0F4 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747582A1DA84E0086E0F4 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		B277475B2A1DA84E0086E0F4 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747582A1DA84E0086E0F4 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		B277475E2A1DA8720086E0F4 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B277475D2A1DA8710086E0F4 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		B27747612A1DA8830086E0F4 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747602A1DA8830086E0F4 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		B27747642A1DA8950086E0F4 /* Hook */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747632A1DA8950086E0F4 /* XCRemoteSwiftPackageReference "Hook" */;
+			productName = Hook;
+		};
+		B27747672A1DA9DC0086E0F4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747662A1DA9DC0086E0F4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		B277476A2A1DA9FA0086E0F4 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B27747692A1DA9FA0086E0F4 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B277471E2A1DA4FC0086E0F4 /* Project object */;
 }
