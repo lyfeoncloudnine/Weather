@@ -20,16 +20,6 @@ struct Weather: Decodable, Equatable {
         case weather
     }
     
-    struct Temp: Decodable {
-        let min: Double
-        let max: Double
-    }
-    
-    struct WeatherDetail: Decodable {
-        let description: String
-        let icon: String
-    }
-    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         date = try container.decode(Date.self, forKey: .date)
@@ -41,16 +31,5 @@ struct Weather: Decodable, Equatable {
         guard let detail = (try container.decode([WeatherDetail].self, forKey: .weather)).first else { throw WeatherError.decodeFail }
         description = detail.description
         icon = detail.icon
-    }
-}
-
-enum WeatherError: LocalizedError {
-    case decodeFail
-    
-    var errorDescription: String? {
-        switch self {
-        case .decodeFail:
-            return "데이터 디코딩 실패"
-        }
     }
 }

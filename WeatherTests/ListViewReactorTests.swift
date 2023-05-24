@@ -44,8 +44,42 @@ final class ListViewReactorTests: QuickSpec {
                 }
             }
             
-            context("로드했을 떄") {
-                it("로딩 상태가 변경된다") {
+            context("로드했을 때") {
+                context("성공하면") {
+                    beforeEach {
+                        reactor.action.onNext(.refresh)
+                    }
+                    
+                    it("각 날씨는 존재한다") {
+                        XCTAssertFalse(reactor.currentState.seoulWeathers.isEmpty)
+                        XCTAssertFalse(reactor.currentState.londonWeathers.isEmpty)
+                        XCTAssertFalse(reactor.currentState.chicagoWeathers.isEmpty)
+                    }
+                    
+                    it("에러메시지는 없다") {
+                        XCTAssertNil(reactor.currentState.errorMessage)
+                    }
+                }
+                
+                context("실패하면") {
+                    beforeEach {
+                        networkService = NetworkServiceStub(failure: true)
+                        reactor = ListViewReactor(networkService: networkService)
+                        reactor.action.onNext(.refresh)
+                    }
+                    
+                    it("각 날씨는 비어있다") {
+                        XCTAssertTrue(reactor.currentState.seoulWeathers.isEmpty)
+                        XCTAssertTrue(reactor.currentState.londonWeathers.isEmpty)
+                        XCTAssertTrue(reactor.currentState.chicagoWeathers.isEmpty)
+                    }
+                    
+                    it("에러메시지가 존재한다") {
+                        XCTAssertNotNil(reactor.currentState.errorMessage)
+                    }
+                }
+                
+                it("로딩 상태는 변한다") {
                     let scheduler = TestScheduler(initialClock: 0)
                     let disposeBag = DisposeBag()
                     
@@ -68,23 +102,6 @@ final class ListViewReactorTests: QuickSpec {
                     ]
                     
                     XCTAssertEqual(observer.events, expectedEvents)
-                }
-                
-                context("성공하면") {
-                    it("각 날씨는 비어있지 않다") {
-                        reactor.action.onNext(.refresh)
-                        XCTAssertFalse(reactor.currentState.seoulWeathers.isEmpty)
-                        XCTAssertFalse(reactor.currentState.londonWeathers.isEmpty)
-                        XCTAssertFalse(reactor.currentState.chicagoWeathers.isEmpty)
-                    }
-                }
-                
-                context("실패하면") {
-                    it("에러메시지가 있다") {
-                        reactor.isStubEnabled = true
-                        reactor.stub.state.value = ListViewReactor.State(errorMessage: "대충 에러메시지")
-                        XCTAssertNotNil(reactor.currentState.errorMessage)
-                    }
                 }
             }
         }

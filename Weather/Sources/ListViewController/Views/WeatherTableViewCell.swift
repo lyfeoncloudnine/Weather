@@ -9,7 +9,7 @@ import UIKit
 
 import Hook
 import Then
-import Kingfisher
+
 final class WeatherTableViewCell: BaseTableViewCell {
     private let dateLabel = UILabel().then {
         $0.font = .preferredFont(forTextStyle: .subheadline)

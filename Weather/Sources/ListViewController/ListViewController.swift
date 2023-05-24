@@ -76,6 +76,8 @@ final class ListViewController: UIViewController, View {
 
 private extension ListViewController {
     func presentAlert(message: String) {
+        guard presentedViewController == nil else { return }
+        
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alertController.addAction(.init(title: "확인", style: .default))
         present(alertController, animated: true)

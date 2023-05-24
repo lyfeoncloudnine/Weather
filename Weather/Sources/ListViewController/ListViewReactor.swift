@@ -81,15 +81,13 @@ private extension ListViewReactor {
                 guard let self else { return .empty() }
                 return fetchWeather(city: city, for: availableCity)
             }
+            .catch { .just(.setErrorMessage($0.localizedDescription)) }
     }
     
     func geocodeCity(city: AvailableCity) -> Observable<City> {
         networkService.request(.geocoding(city: city))
             .map([City].self)
-            .flatMap { cities -> Observable<City> in
-                guard let city = cities.first else { return .empty() }
-                return .just(city)
-            }
+            .compactMap { $0.first }
     }
     
     func fetchWeather(city: City, for availableCity: AvailableCity) -> Observable<Mutation> {
@@ -99,12 +97,8 @@ private extension ListViewReactor {
         return networkService.request(.forecast(city: city))
             .map([Weather].self, atKeyPath: "daily", using: decoder)
             .map { Array($0.prefix(5)) }
-            .map { weathers -> SectionOfWeather in
-                let header = city.name
-                let section = SectionOfWeather(header: header, items: weathers)
-                return section
-            }
-            .map { section -> Mutation in
+            .map { SectionOfWeather(header: city.name, items: $0) }
+            .map { section in
                 switch availableCity {
                 case .seoul:
                     return .setSeoulWeathers(section)

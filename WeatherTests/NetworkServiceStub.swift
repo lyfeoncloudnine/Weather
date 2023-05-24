@@ -15,7 +15,17 @@ import RxSwift
 final class NetworkServiceStub: NetworkServiceType {
     private let provider = MoyaProvider<WeatherTarget>(stubClosure: MoyaProvider.immediatelyStub)
     
+    private let failure: Bool
+    
+    init(failure: Bool = false) {
+        self.failure = failure
+    }
+    
     func request(_ target: WeatherTarget) -> RxSwift.Observable<Response> {
-        provider.rx.request(target).asObservable()
+        if failure {
+            return .just(Response(statusCode: 200, data: Data()))
+        } else {
+            return provider.rx.request(target).asObservable()
+        }
     }
 }
