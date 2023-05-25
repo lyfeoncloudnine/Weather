@@ -29,10 +29,10 @@ final class ListViewReactorTests: QuickSpec {
             }
             
             context("로드하지 않았을 때") {
-                it("각 날씨는 비어있다") {
-                    XCTAssertTrue(reactor.currentState.seoulWeathers.isEmpty)
-                    XCTAssertTrue(reactor.currentState.londonWeathers.isEmpty)
-                    XCTAssertTrue(reactor.currentState.chicagoWeathers.isEmpty)
+                it("각 날씨는 없다") {
+                    XCTAssertNil(reactor.currentState.seoulWeathers)
+                    XCTAssertNil(reactor.currentState.londonWeathers)
+                    XCTAssertNil(reactor.currentState.chicagoWeathers)
                 }
                 
                 it("로딩중이 아니다") {
@@ -51,9 +51,9 @@ final class ListViewReactorTests: QuickSpec {
                     }
                     
                     it("각 날씨는 존재한다") {
-                        XCTAssertFalse(reactor.currentState.seoulWeathers.isEmpty)
-                        XCTAssertFalse(reactor.currentState.londonWeathers.isEmpty)
-                        XCTAssertFalse(reactor.currentState.chicagoWeathers.isEmpty)
+                        XCTAssertNotNil(reactor.currentState.seoulWeathers)
+                        XCTAssertNotNil(reactor.currentState.londonWeathers)
+                        XCTAssertNotNil(reactor.currentState.chicagoWeathers)
                     }
                     
                     it("에러메시지는 없다") {
@@ -68,10 +68,10 @@ final class ListViewReactorTests: QuickSpec {
                         reactor.action.onNext(.refresh)
                     }
                     
-                    it("각 날씨는 비어있다") {
-                        XCTAssertTrue(reactor.currentState.seoulWeathers.isEmpty)
-                        XCTAssertTrue(reactor.currentState.londonWeathers.isEmpty)
-                        XCTAssertTrue(reactor.currentState.chicagoWeathers.isEmpty)
+                    it("각 날씨는 없다") {
+                        XCTAssertNil(reactor.currentState.seoulWeathers)
+                        XCTAssertNil(reactor.currentState.londonWeathers)
+                        XCTAssertNil(reactor.currentState.chicagoWeathers)
                     }
                     
                     it("에러메시지가 존재한다") {

@@ -23,9 +23,9 @@ final class ListViewReactor: Reactor {
     }
     
     struct State {
-        var seoulWeathers = [SectionOfWeather]()
-        var londonWeathers = [SectionOfWeather]()
-        var chicagoWeathers = [SectionOfWeather]()
+        var seoulWeathers: SectionOfWeather?
+        var londonWeathers: SectionOfWeather?
+        var chicagoWeathers: SectionOfWeather?
         var isLoading = false
         var title = "Weather"
         @Pulse var errorMessage: String?
@@ -55,13 +55,13 @@ final class ListViewReactor: Reactor {
         
         switch mutation {
         case .setSeoulWeathers(let weathers):
-            newState.seoulWeathers = [weathers]
+            newState.seoulWeathers = weathers
             
         case .setLondonWeathers(let weathers):
-            newState.londonWeathers = [weathers]
+            newState.londonWeathers = weathers
             
         case .setChicagoWeathers(let weathers):
-            newState.chicagoWeathers = [weathers]
+            newState.chicagoWeathers = weathers
             
         case .setLoading(let isLoading):
             newState.isLoading = isLoading

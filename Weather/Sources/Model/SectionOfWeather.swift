@@ -10,7 +10,7 @@ import Foundation
 import RxDataSources
 
 extension Weather: IdentifiableType {
-    var identity: String { UUID().uuidString }
+    var identity: Date { date }
 }
 
 struct SectionOfWeather {

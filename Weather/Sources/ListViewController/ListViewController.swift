@@ -32,13 +32,11 @@ final class ListViewController: UIViewController, View {
             .disposed(by: disposeBag)
         
         // State
-        let seoulWeathers = reactor.state.compactMap { $0.seoulWeathers }.distinctUntilChanged()
-        let londonWeathers = reactor.state.compactMap { $0.londonWeathers }.distinctUntilChanged()
-        let chicagoWeathers = reactor.state.compactMap { $0.chicagoWeathers }.distinctUntilChanged()
+        let seoulWeathers = reactor.state.map { $0.seoulWeathers }.distinctUntilChanged()
+        let londonWeathers = reactor.state.map { $0.londonWeathers }.distinctUntilChanged()
+        let chicagoWeathers = reactor.state.map { $0.chicagoWeathers }.distinctUntilChanged()
         Observable.combineLatest([seoulWeathers, londonWeathers, chicagoWeathers])
-            .map { array -> [SectionOfWeather] in
-                array.flatMap { $0 }
-            }
+            .map { $0.compactMap { $0 } }
             .asDriver(onErrorJustReturn: [])
             .drive(mainView.tableView.rx.items(dataSource: mainView.dataSources()))
             .disposed(by: disposeBag)
