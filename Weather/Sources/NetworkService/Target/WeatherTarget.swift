@@ -54,7 +54,7 @@ extension WeatherTarget: TargetType {
 
 extension WeatherTarget {
     private var appID: String {
-        "0381e9354fe50a3a0a5fa63b9f067c8d"
+        ""
     }
 }
 
